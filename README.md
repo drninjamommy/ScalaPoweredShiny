@@ -12,9 +12,9 @@ Demonstration of using a R Shiny Dashboard calling a Scala RESTful API (http4s).
 Generate an http4s service on the blaze backend with Circe.
 
 1. `sbt run`
-2. `curl http://localhost:8080/hello/$USER`
+2. `curl http://localhost:8080/data/Dan`
 
-(https://github.com/http4s/http4s.g8)
+Repo created using the http4s template located [here](https://github.com/http4s/http4s.g8)
 
 ### Endpoints
 
