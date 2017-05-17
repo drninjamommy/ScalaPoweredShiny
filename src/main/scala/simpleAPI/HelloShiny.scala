@@ -7,16 +7,11 @@ import org.http4s.dsl._
 
 object HelloShiny {
 
-  var counter = 0
   val service = HttpService {
 
-    case GET -> Root / "hammer" / name => {
-      counter += 1
-      println(s"Running ${counter}")
-      Ok(
+    case GET -> Root / "hammer" / name => Ok(
         Json.obj(
           "Message" -> Json.fromString(s"Hello ${name}, Python Added this!")))
-    }
 
     case GET -> Root / "rock" =>
       Ok(Json.obj("payload" -> Json.fromString(s"TODO -> rock table")))
