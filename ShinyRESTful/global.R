@@ -30,6 +30,7 @@ library(shiny)
 library(DT)
 library(jsonlite)
 library(shinydashboard)
+library(httr)
 
 # Pull from URL -----------------------------------------------------------
 get_API <- function(url) {

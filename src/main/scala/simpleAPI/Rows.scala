@@ -15,6 +15,10 @@ object Rows {
   case class Rocks(area: Double, peri: Double, shape: Double, perm: Double)
       extends Rows
 
+  case class User(name: String)
+  case class data(data: User)
+  case class Hello(greeting: String)
+
   implicit val encodeEvent: Encoder[Rows] = Encoder.instance {
     case e @ Cars(x, y) => e.asJson
     case e @ Pressure(x, y) => e.asJson

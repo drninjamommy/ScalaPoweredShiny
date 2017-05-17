@@ -29,6 +29,6 @@ cars = get_API("http://localhost:8080/data/cars")
 name = "Dan!"
 body <- list(data = list(name = name))
 r <- POST(url = "http://localhost:8080/message", body = body, 
-          encode = "json", verbose())
+          encode = "json")
 output <- content(r, "parsed")$Message
 output

@@ -9,6 +9,7 @@ import org.http4s.circe._
 import org.http4s.dsl._
 import org.http4s.server.blaze.BlazeBuilder
 import org.http4s.server.{Server, ServerApp}
+import simpleAPI.Rows.{Hello, data}
 import simpleAPI.readingData.getJson
 
 import scala.util.Properties.envOrNone
@@ -30,10 +31,6 @@ object ShinyScala extends ServerApp {
   lazy val rockData: Json = getJson("rocks.csv")
   lazy val carData: Json = getJson("cars.csv")
   lazy val pressureData: Json = getJson("pressure.csv")
-
-  case class User(name: String)
-  case class data(data: User)
-  case class Hello(greeting: String)
 
   val service = HttpService {
     case GET -> Root / "data" / name => {
