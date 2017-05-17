@@ -13,7 +13,7 @@ object Rows {
   case class Pressure(temperature: Double, pressure: Double) extends Rows
 
   case class Rocks(area: Double, peri: Double, shape: Double, perm: Double)
-    extends Rows
+      extends Rows
 
   implicit val encodeEvent: Encoder[Rows] = Encoder.instance {
     case e @ Cars(x, y) => e.asJson

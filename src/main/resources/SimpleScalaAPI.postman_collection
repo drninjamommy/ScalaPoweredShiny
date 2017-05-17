@@ -1,0 +1,71 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SimpleScalaAPI",
+		"_postman_id": "ad5bb8be-26cb-2b51-cdf2-83cacde52d0e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/data/cars.csv",
+			"request": {
+				"url": "http://localhost:8080/data/cars.csv",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\":{\"Name\":\"Dan!\"}}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/data/rocks.csv",
+			"request": {
+				"url": "http://localhost:8080/data/rocks.csv",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\":{\"Name\":\"Dan!\"}}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/data/pressure.csv",
+			"request": {
+				"url": "http://localhost:8080/data/pressure.csv",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\":{\"Name\":\"Dan!\"}}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

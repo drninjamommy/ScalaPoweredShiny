@@ -27,6 +27,11 @@ object readingData {
     }
   }
 
+  /** Convert data for the given file name to JSON
+    *
+    * @param fileName
+    * @return
+    */
   def getJson(fileName: String): Json = readData(fileName).asJson
 
 }
