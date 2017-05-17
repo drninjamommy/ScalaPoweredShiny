@@ -10,7 +10,7 @@
 		{
 			"name": "http://localhost:8080/data/cars.csv",
 			"request": {
-				"url": "http://localhost:8080/data/cars.csv",
+				"url": "http://localhost:8080/data/cars",
 				"method": "GET",
 				"header": [
 					{
@@ -30,7 +30,7 @@
 		{
 			"name": "http://localhost:8080/data/rocks.csv",
 			"request": {
-				"url": "http://localhost:8080/data/rocks.csv",
+				"url": "http://localhost:8080/data/rocks",
 				"method": "GET",
 				"header": [
 					{
@@ -50,7 +50,7 @@
 		{
 			"name": "http://localhost:8080/data/pressure.csv",
 			"request": {
-				"url": "http://localhost:8080/data/pressure.csv",
+				"url": "http://localhost:8080/data/pressure",
 				"method": "GET",
 				"header": [
 					{
@@ -62,6 +62,26 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\"data\":{\"Name\":\"Dan!\"}}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/message",
+			"request": {
+				"url": "http://localhost:8080/message",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\":{\"name\":\"Dan!\"}}"
 				},
 				"description": ""
 			},

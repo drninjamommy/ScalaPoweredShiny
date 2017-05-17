@@ -9,7 +9,7 @@ object readingData {
 
   /** Load the file by name from the resources folder
     *
-    * @param fileName
+    * @param fileName   Name of the file
     * @return
     */
   def readData(fileName: String): List[Rows] = {
@@ -29,7 +29,7 @@ object readingData {
 
   /** Convert data for the given file name to JSON
     *
-    * @param fileName
+    * @param fileName   Name of the file
     * @return
     */
   def getJson(fileName: String): Json = readData(fileName).asJson

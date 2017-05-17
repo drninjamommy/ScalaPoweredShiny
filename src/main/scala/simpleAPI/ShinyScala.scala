@@ -9,6 +9,7 @@ import org.http4s.circe._
 import org.http4s.dsl._
 import org.http4s.server.blaze.BlazeBuilder
 import org.http4s.server.{Server, ServerApp}
+import simpleAPI.readingData.getJson
 
 import scala.util.Properties.envOrNone
 import scalaz.concurrent.Task
@@ -26,9 +27,9 @@ object ShinyScala extends ServerApp {
       .withServiceExecutor(pool)
       .start
 
-  lazy val rockData: Json = simpleAPI.readingData.getJson("rocks.csv")
-  lazy val carData: Json = simpleAPI.readingData.getJson("cars.csv")
-  lazy val pressureData: Json = simpleAPI.readingData.getJson("pressure.csv")
+  lazy val rockData: Json = getJson("rocks.csv")
+  lazy val carData: Json = getJson("cars.csv")
+  lazy val pressureData: Json = getJson("pressure.csv")
 
   case class User(name: String)
   case class data(data: User)
