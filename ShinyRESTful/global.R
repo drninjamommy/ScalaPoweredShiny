@@ -34,14 +34,14 @@ library(shinydashboard)
 # Pull from URL -----------------------------------------------------------
 get_API <- function(url) {
   df <- fromJSON(url)
-  json_data_frame <- fromJSON(df$payload)
+  json_data_frame <- df$payload
   json_data_frame
 }
 
 
 # Simple Authentication ---------------------------------------------------
 # Ideally this needs to be in a secure location...
-credentials = list("uadmin" = "padmin",
+credentials = list("dd" = "dd",
                    "uuser" = "puser")
 
 login <- box(title = "Login Page",

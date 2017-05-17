@@ -13,16 +13,12 @@
 shinyServer(function(input, output, session) {
   
   # Storing data Server Side ----------------------------------------------
-  # The API provide three endpoints:
-  #   1. cars => [http://localhost:8000/cars](http://localhost:8000/cars)
-  #   2. pressure => [http://localhost:8000/pressure](http://localhost:8000/pressure)
-  #   3. rock => [http://localhost:8000/rock](http://localhost:8000/rock)
   datasetInput <- reactive({
     switch(
       input$dataset,
-      "rock" = get_API("http://localhost:8000/rock"), 
-      "pressure" = get_API("http://localhost:8000/pressure"),
-      "cars" = get_API("http://localhost:8000/cars")
+      "rock" = get_API("http://localhost:8080/data/rocks"), 
+      "pressure" = get_API("http://localhost:8080/data/pressure"),
+      "cars" = get_API("http://localhost:8080/data/cars")
     )
   })
   
@@ -77,8 +73,9 @@ shinyServer(function(input, output, session) {
       output = ""
     } else {
       name = input$text 
-      body <- list(data = list(Name = name))
-      r <- POST(url = "http://localhost:8000/data", body = body, 
+      body <- list(data = list(name = name))
+      r <- POST(url = "http://localhost:8080/message", 
+                body = body, 
                 encode = "json", verbose())
       output <- content(r, "parsed")$Message
     }

@@ -1,9 +1,7 @@
 
 | Project       | Created   | Updated   | Version |
 |---------------|-----------|-----------|---------|
-| Shiny RESTful | 15/5/2017 | 17/5/2017 | 0.1     |
-
-**WARNING: NOT CONNECTED TO RShiny AS YET**
+| Shiny RESTful | 15/5/2017 | 17/5/2017 | 0.2     |
 
 # Overview
 

@@ -3,6 +3,7 @@ package simpleAPI
 import java.util.concurrent.{ExecutorService, Executors}
 
 import io.circe.Json
+import io.circe.generic.auto._
 import org.http4s._
 import org.http4s.circe._
 import org.http4s.dsl._
@@ -29,15 +30,25 @@ object ShinyScala extends ServerApp {
   lazy val carData: Json = simpleAPI.readingData.getJson("cars.csv")
   lazy val pressureData: Json = simpleAPI.readingData.getJson("pressure.csv")
 
+  case class User(name: String)
+  case class data(data: User)
+  case class Hello(greeting: String)
+
   val service = HttpService {
     case GET -> Root / "data" / name => {
       name match {
         case "rocks" => Ok(Json.obj("payload" -> rockData))
         case "cars" => Ok(Json.obj("payload" -> carData))
         case "pressure" => Ok(Json.obj("payload" -> pressureData))
-        case _ =>
-          Ok(Json.obj("error" -> Json.fromString(s"No data for $name found.")))
+        case _ => NoContent()
       }
+    }
+    case req @ POST -> Root / "message" => {
+      for {
+        user <- req.as(jsonOf[data])
+        resp <- Ok(Json.obj("Message" -> Json.fromString(
+          s"Hello ${Hello(user.data.name).greeting} this is your http4s API")))
+      } yield resp
     }
   }
 }

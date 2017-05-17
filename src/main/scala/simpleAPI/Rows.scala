@@ -1,6 +1,6 @@
 package simpleAPI
 
-import io.circe.{Encoder}
+import io.circe.Encoder
 import io.circe.generic.auto._
 import io.circe.syntax._
 
