@@ -1,7 +1,7 @@
 
 | Project       | Created   | Updated   | Version |
 |---------------|-----------|-----------|---------|
-| Shiny RESTful | 15/5/2017 | 17/5/2017 | 0.2     |
+| Shiny RESTful | 15/5/2017 | 6/6/2017  | 0.2     |
 
 # Overview
 
