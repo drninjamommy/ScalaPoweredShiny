@@ -6,6 +6,5 @@ project/plugins/project/
 .idea/target/*
 .idea/vcs.xml
 .idea/workspace.xml
-project/
 .Rproj.user
 ShinyRESTful/.Rhistory

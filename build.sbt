@@ -1,3 +1,4 @@
+name := "http4s-microservice"
 organization := "MeridianSolutions"
 name := "danDixey"
 version := "0.0.1-SNAPSHOT"
@@ -15,3 +16,5 @@ libraryDependencies ++= Seq(
  // Optional for string interpolation to JSON model
  "io.circe" %% "circe-literal" % "0.6.1"
 )
+
+enablePlugins(JavaAppPackaging)
