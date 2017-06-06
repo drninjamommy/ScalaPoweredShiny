@@ -12,12 +12,11 @@ import org.http4s.server.{Server, ServerApp}
 import simpleAPI.Rows.{Hello, data}
 import simpleAPI.readingData.getJson
 
-import scala.util.Properties.envOrNone
 import scalaz.concurrent.Task
 
 object ShinyScala extends ServerApp {
 
-  val port: Int = envOrNone("PORT") map (_.toInt) getOrElse 8080
+  val port: Int = sys.env.getOrElse("PORT", "5000").toInt
   val ip = "0.0.0.0"
   val pool: ExecutorService = Executors.newCachedThreadPool()
 
