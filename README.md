@@ -39,13 +39,36 @@ Three files are used to create the Dashboard:
 2.  a script to set the server that responds to UI actions and displays the charts (server.R)
 3.  a supporting file that creates variables and functions that are globally available to bother the server and UI scripts (global.R).
 
-### Testing
+### Heroku API Running
 
-**TODO**
+I've been meaning to try the Heroku services for a while. Firstly, wow. So simple!
+
+Launch at Heroku API using the basic (tutorial)[https://devcenter.heroku.com/articles/getting-started-with-scala#introduction].
+
+Simple instructions and minimal amount of commands to get up and running.
+
+```
+    heroku create
+    git push heroku master
+```
+
+App Name: **afternoon-springs-20343**
+
+The only gotchas were that I needed to a build.properties file and plugins.sbt file to the project folder.
+
+#### build.properties
+
+```
+    sbt.version=0.13.9
+```
+
+#### plugins.sbt
+
+```
+    addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "0.8.0")
+```
 
 ### Running the Dashboard
-
-**NOT READY**
 
 Features:
 

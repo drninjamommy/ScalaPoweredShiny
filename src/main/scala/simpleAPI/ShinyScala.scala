@@ -17,7 +17,7 @@ import scalaz.concurrent.Task
 
 object ShinyScala extends ServerApp {
 
-  val port: Int = envOrNone("HTTP_PORT") map (_.toInt) getOrElse 8080
+  val port: Int = envOrNone("PORT") map (_.toInt) getOrElse 8080
   val ip = "0.0.0.0"
   val pool: ExecutorService = Executors.newCachedThreadPool()
 

@@ -11,10 +11,12 @@ libraryDependencies ++= Seq(
  "org.http4s"     %% "http4s-circe"        % Http4sVersion,
  "org.http4s"     %% "http4s-dsl"          % Http4sVersion,
  "ch.qos.logback" %  "logback-classic"     % "1.2.1",
- // Optional for auto-derivation of JSON codecs
  "io.circe" %% "circe-generic" % "0.6.1",
- // Optional for string interpolation to JSON model
  "io.circe" %% "circe-literal" % "0.6.1"
 )
 
 enablePlugins(JavaAppPackaging)
+
+scalacOptions ++= Seq("-encoding",
+  "UTF-8",
+  "-deprecation", "-feature", "-unchecked", "-language:_")
